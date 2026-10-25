@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tek satırlık ileti: okunmamış noktası, gönderen, (şifreli) konu, zaman. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_row"
+    style="@style/MailDotsWidgetRow">
+
+    <ImageView
+        android:id="@+id/widget_row_dot"
+        style="@style/MailDotsWidgetDot" />
+
+    <TextView
+        android:id="@+id/widget_row_from"
+        style="@style/MailDotsWidgetSender" />
+
+    <ImageView
+        android:id="@+id/widget_row_lock"
+        style="@style/MailDotsWidgetLock"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/widget_row_subject"
+        style="@style/MailDotsWidgetSubject" />
+
+    <TextView
+        android:id="@+id/widget_row_time"
+        style="@style/MailDotsWidgetTime" />
+</LinearLayout>

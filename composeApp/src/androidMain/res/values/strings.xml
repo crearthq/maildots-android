@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Yalnızca ana ekran widget'ı (widget seçicisi kaynak dize ister). Uygulama metinleri ui/Strings.kt'de.
+     Varsayılan İngilizce; Türkçe values-tr'de (uygulamadaki gibi dil cihazdan gelir). -->
+<resources>
+    <string name="widget_label">Recent emails</string>
+    <string name="widget_description">The last 4 emails in your inbox.</string>
+    <string name="widget_inbox">Inbox</string>
+    <string name="widget_empty">Your inbox is empty.</string>
+    <string name="widget_sign_in">Sign in to MailDots.</string>
+    <string name="widget_open_app">Open MailDots to see your emails.</string>
+    <string name="widget_no_subject">(No subject)</string>
+    <string name="widget_encrypted">Encrypted</string>
+    <string name="widget_sample_account">you@yourcompany.com</string>
+    <string name="widget_sample_subject_1">Meeting notes</string>
+    <string name="widget_sample_subject_2">About the offer</string>
+    <string name="widget_sample_subject_3">Your request was answered</string>
+    <string name="widget_sample_subject_4">Invoice</string>
+    <string name="widget_sample_sender_3">Support</string>
+    <string name="widget_sample_time_4">Yesterday</string>
+</resources>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Widget seçicisindeki önizleme (Android 12+): örnek veri, gerçek posta değil. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background"
+    android:clipToOutline="true"
+    android:orientation="vertical"
+    android:padding="@dimen/widget_padding">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="24dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginEnd="6dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_stat_maildots" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:text="@string/widget_inbox"
+            android:textColor="@color/widget_text"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="middle"
+            android:maxLines="1"
+            android:text="@string/widget_sample_account"
+            android:textColor="@color/widget_text_secondary"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/widget_badge"
+            android:paddingHorizontal="7dp"
+            android:paddingVertical="1dp"
+            android:text="2"
+            android:textColor="@color/widget_badge_text"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="6dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout style="@style/MailDotsWidgetRow">
+            <ImageView style="@style/MailDotsWidgetDot" />
+            <TextView style="@style/MailDotsWidgetSender" android:text="Ayşe Yılmaz" android:textStyle="bold" />
+            <TextView style="@style/MailDotsWidgetSubject" android:text="@string/widget_sample_subject_1" />
+            <TextView style="@style/MailDotsWidgetTime" android:text="10:42" android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/MailDotsWidgetRow">
+            <ImageView style="@style/MailDotsWidgetDot" />
+            <TextView style="@style/MailDotsWidgetSender" android:text="Mehmet Kaya" android:textStyle="bold" />
+            <ImageView style="@style/MailDotsWidgetLock" />
+            <TextView style="@style/MailDotsWidgetSubject" android:text="@string/widget_sample_subject_2" />
+            <TextView style="@style/MailDotsWidgetTime" android:text="09:15" android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/MailDotsWidgetRow">
+            <ImageView style="@style/MailDotsWidgetDot" android:visibility="invisible" />
+            <TextView style="@style/MailDotsWidgetSender" android:text="@string/widget_sample_sender_3" />
+            <TextView style="@style/MailDotsWidgetSubject" android:text="@string/widget_sample_subject_3" />
+            <TextView style="@style/MailDotsWidgetTime" android:text="08:03" android:alpha="0.75" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/MailDotsWidgetRow">
+            <ImageView style="@style/MailDotsWidgetDot" android:visibility="invisible" />
+            <TextView style="@style/MailDotsWidgetSender" android:text="Elif Demir" />
+            <TextView style="@style/MailDotsWidgetSubject" android:text="@string/widget_sample_subject_4" />
+            <TextView style="@style/MailDotsWidgetTime" android:text="@string/widget_sample_time_4" android:alpha="0.75" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

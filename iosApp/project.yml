@@ -1,0 +1,82 @@
+# Xcode projesi bu dosyadan üretilir (xcodeproj depoda tutulmaz): `xcodegen generate`
+name: iosApp
+options:
+  bundleIdPrefix: io.maildots
+  deploymentTarget:
+    iOS: "16.0"
+  developmentLanguage: tr
+packages:
+  Firebase:
+    url: https://github.com/firebase/firebase-ios-sdk
+    from: 12.19.2
+targets:
+  iosApp:
+    type: application
+    platform: iOS
+    sources:
+      - path: iosApp
+        excludes:
+          - GoogleService-Info.plist
+      - path: Shared
+    dependencies:
+      - package: Firebase
+        product: FirebaseMessaging
+      - target: MailDotsWidget
+    preBuildScripts:
+      - name: Compile Kotlin Framework
+        basedOnDependencyAnalysis: false
+        script: |
+          if [ "YES" = "$OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED" ]; then
+            echo "Skipping Gradle build task invocation due to OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED environment variable set to \"YES\""
+            exit 0
+          fi
+          cd "$SRCROOT/.."
+          ./gradlew :composeApp:embedAndSignAppleFrameworkForXcode
+    postBuildScripts:
+      # Kullanıcının yerelde koyduğu Firebase yapılandırması (depoda yok); yoksa bildirim kapalı.
+      - name: Copy GoogleService-Info.plist
+        basedOnDependencyAnalysis: false
+        script: |
+          SRC="$SRCROOT/iosApp/GoogleService-Info.plist"
+          if [ -f "$SRC" ]; then
+            cp "$SRC" "$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/GoogleService-Info.plist"
+          fi
+    settings:
+      base:
+        PRODUCT_NAME: MailDots
+        PRODUCT_BUNDLE_IDENTIFIER: io.maildots.app
+        INFOPLIST_FILE: iosApp/Info.plist
+        CODE_SIGN_ENTITLEMENTS: iosApp/iosApp.entitlements
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: 68426222D8
+        TARGETED_DEVICE_FAMILY: "1"
+        MARKETING_VERSION: 1.0.0
+        CURRENT_PROJECT_VERSION: 2
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ENABLE_USER_SCRIPT_SANDBOXING: NO
+        SWIFT_VERSION: 5.0
+        FRAMEWORK_SEARCH_PATHS: "$(inherited) $(SRCROOT)/../composeApp/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)"
+        OTHER_LDFLAGS: "$(inherited) -framework ComposeApp"
+  # Ana ekran widget'ı: gelen kutusundaki son 5 ileti (veriyi uygulama yazar, widget ağa çıkmaz).
+  MailDotsWidget:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: Widget
+      - path: Shared
+    dependencies:
+      - sdk: WidgetKit.framework
+      - sdk: SwiftUI.framework
+    settings:
+      base:
+        PRODUCT_NAME: MailDotsWidget
+        PRODUCT_BUNDLE_IDENTIFIER: io.maildots.app.widget
+        INFOPLIST_FILE: Widget/Info.plist
+        CODE_SIGN_ENTITLEMENTS: Widget/Widget.entitlements
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: 68426222D8
+        TARGETED_DEVICE_FAMILY: "1"
+        MARKETING_VERSION: 1.0.0
+        CURRENT_PROJECT_VERSION: 2
+        SWIFT_VERSION: 5.0
+        SKIP_INSTALL: YES

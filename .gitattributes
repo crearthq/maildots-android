@@ -1,0 +1,14 @@
+# Windows ve Mac'te aynı satır sonları: depoda her zaman LF.
+* text=auto eol=lf
+# Unix betikleri Mac'te CRLF ile çalışmaz.
+*.sh text eol=lf
+gradlew text eol=lf
+# Windows betiği CRLF kalır.
+*.bat text eol=crlf
+# İkili dosyalar dönüştürülmez.
+*.png binary
+*.jpg binary
+*.jar binary
+*.p12 binary
+*.keystore binary
+*.jks binary

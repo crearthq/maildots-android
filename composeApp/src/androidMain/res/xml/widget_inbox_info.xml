@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Gelen kutusu widget'ı: varsayılan 4x2, yatay ve dikey boyutlanır.
+     updatePeriodMillis=0: zamanlı yenileme yok (pil maliyeti sıfır); veriyi uygulama yazar ve
+     widget'ı kendisi yeniler (gelen kutusu değişince, yeni posta bildirimi gelince). -->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/widget_description"
+    android:initialLayout="@layout/widget_inbox"
+    android:minWidth="250dp"
+    android:minHeight="110dp"
+    android:minResizeWidth="180dp"
+    android:minResizeHeight="50dp"
+    android:previewImage="@drawable/widget_preview"
+    android:previewLayout="@layout/widget_inbox_preview"
+    android:resizeMode="horizontal|vertical"
+    android:targetCellWidth="4"
+    android:targetCellHeight="2"
+    android:updatePeriodMillis="0"
+    android:widgetCategory="home_screen" />

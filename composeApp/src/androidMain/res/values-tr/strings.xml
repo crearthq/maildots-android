@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_label">Son e-postalar</string>
+    <string name="widget_description">Gelen kutunuzdaki son 4 e-posta.</string>
+    <string name="widget_inbox">Gelen Kutusu</string>
+    <string name="widget_empty">Gelen kutunuz boş.</string>
+    <string name="widget_sign_in">MailDots\'a giriş yapın.</string>
+    <string name="widget_open_app">E-postalarınızı görmek için MailDots\'u açın.</string>
+    <string name="widget_no_subject">(Konu yok)</string>
+    <string name="widget_encrypted">Şifreli</string>
+    <string name="widget_sample_account">ad@sirketiniz.com</string>
+    <string name="widget_sample_subject_1">Toplantı notları</string>
+    <string name="widget_sample_subject_2">Teklif hakkında</string>
+    <string name="widget_sample_subject_3">Talebiniz yanıtlandı</string>
+    <string name="widget_sample_subject_4">Fatura</string>
+    <string name="widget_sample_sender_3">Destek</string>
+    <string name="widget_sample_time_4">Dün</string>
+</resources>

@@ -1,0 +1,18 @@
+# Kotlin/Native, NSObject'in KVO kategorisini (observeValueForKeyPath:...) ezemez;
+# bu küçük ObjC sınıfı gözlemi yapar ve değişikliği Kotlin bloğuna iletir.
+# Uygulaması kvo.m'de; build.gradle.kts onu libmdkvo.a olarak derler.
+language = Objective-C
+package = io.maildots.app.kvo
+compilerOpts = -fobjc-arc
+staticLibraries = libmdkvo.a
+---
+#import <Foundation/Foundation.h>
+
+/** Bir nesnenin anahtar yolunu izler; her yeni değerde [onChange] ana iş parçacığında, nesneyle çağrılır. */
+@interface MDKeyPathObserver : NSObject
+- (nonnull instancetype)initWithTarget:(nonnull NSObject *)target
+                               keyPath:(nonnull NSString *)keyPath
+                              onChange:(void (^ _Nonnull)(id _Nonnull object))onChange;
+/** Gözlemi bırakır; birden çok çağrılabilir. */
+- (void)invalidate;
+@end

@@ -1,0 +1,28 @@
+.gradle/
+.kotlin/
+build/
+**/build/
+local.properties
+.idea/
+*.iml
+.DS_Store
+captures/
+*.keystore
+*.jks
+xcuserdata/
+iosApp/Pods/
+
+# Xcode project is generated from iosApp/project.yml
+iosApp/*.xcodeproj/
+dist/
+
+# Firebase iOS yapılandırması kullanıcıda kalır (depoya girmez).
+iosApp/iosApp/GoogleService-Info.plist
+
+# Apple ve Firebase gizli anahtarları hiçbir zaman depoya girmez.
+*.p8
+*.p12
+*.mobileprovision
+*.cer
+.env
+.env.*

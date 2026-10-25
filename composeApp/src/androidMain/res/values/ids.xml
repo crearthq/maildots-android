@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- E-posta görüntüleyicide izin verilen görsel vekili adresi (WebView etiketi). -->
+    <item name="mail_proxy" type="id" />
+</resources>

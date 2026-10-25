@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "438474701084",
+    "project_id": "maildotsio",
+    "storage_bucket": "maildotsio.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438474701084:android:9246a6753dd9b61faee2d9",
+        "android_client_info": {
+          "package_name": "io.maildots.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1WLO10UtrGoCwcw1Oqj2OZd-17LaYFag"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

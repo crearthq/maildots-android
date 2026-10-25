@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ana ekran widget'ı: marka mavisi degrade (iOS widget'ıyla aynı), beyaz yazı.
+     Koyu temada degrade bir ton derinleşir (values-night). -->
+<resources>
+    <color name="widget_gradient_start">#4B58F5</color>
+    <color name="widget_gradient_end">#1F2BCF</color>
+    <color name="widget_text">#FFFFFFFF</color>
+    <color name="widget_text_secondary">#C0FFFFFF</color>
+    <color name="widget_badge_text">#2A38EC</color>
+
+    <!-- Android 12 öncesi köşe; 12+ sistem değeri (values-v31). -->
+    <dimen name="widget_radius">16dp</dimen>
+    <dimen name="widget_padding">14dp</dimen>
+
+    <style name="MailDotsWidgetRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:minHeight">22dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="MailDotsWidgetDot">
+        <item name="android:layout_width">6dp</item>
+        <item name="android:layout_height">6dp</item>
+        <item name="android:layout_marginEnd">6dp</item>
+        <item name="android:src">@drawable/widget_unread_dot</item>
+        <item name="android:importantForAccessibility">no</item>
+    </style>
+
+    <style name="MailDotsWidgetSender">
+        <item name="android:layout_width">96dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">6dp</item>
+        <item name="android:textColor">@color/widget_text</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="MailDotsWidgetLock">
+        <item name="android:layout_width">12dp</item>
+        <item name="android:layout_height">12dp</item>
+        <item name="android:layout_marginEnd">4dp</item>
+        <item name="android:src">@drawable/widget_lock</item>
+        <item name="android:contentDescription">@string/widget_encrypted</item>
+    </style>
+
+    <style name="MailDotsWidgetSubject">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/widget_text_secondary</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="MailDotsWidgetTime">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">6dp</item>
+        <item name="android:textColor">@color/widget_text</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+</resources>

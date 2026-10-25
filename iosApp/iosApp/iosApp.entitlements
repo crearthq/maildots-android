@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>aps-environment</key>
+	<string>development</string>
+	<!-- İlk grup uygulamanın kendisi: şifre ve oturum kayıtları burada kalır (varsayılan grup).
+	     İkincisi yalnızca widget'la paylaşılan gelen kutusu özeti içindir. -->
+	<key>keychain-access-groups</key>
+	<array>
+		<string>$(AppIdentifierPrefix)io.maildots.app</string>
+		<string>$(AppIdentifierPrefix)io.maildots.shared</string>
+	</array>
+</dict>
+</plist>
